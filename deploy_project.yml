@@ -1,0 +1,31 @@
+- name: Deploy Docker Compose project to target instance
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install rsync (required for synchronize module)
+      apt:
+        name: rsync
+        state: present
+        update_cache: yes
+
+    - name: Synchronize project directory to target instance
+      ansible.posix.synchronize:
+        src: "../WM_2/inception/"
+        dest: "/home/ubuntu/inception/"
+        recursive: yes
+      delegate_to: localhost
+
+    - name: Ensure docker-compose is installed
+      apt:
+        name: docker-compose
+        state: present
+        update_cache: yes
+
+    - name: Launch Docker Compose project
+      shell: |
+        cd /home/ubuntu/inception
+        docker compose up -d --build
+      args:
+        executable: /bin/bash
+

@@ -1,0 +1,6 @@
+- name: Test connection to target instance
+  hosts: target
+  tasks:
+    - name: Ping remote instance
+      ping:
+
