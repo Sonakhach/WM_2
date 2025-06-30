@@ -27,7 +27,7 @@ Terraform provisions the following resources on AWS:
 
 ```EC2 Instance:``` A virtual machine to host the application.
 ```Elastic IP:``` A static IP address for the EC2 instance.
-```Security Group:``` Configured to allow traffic on ports 80 (HTTP) and 443 (HTTPS), ensuring the web server is accessible securely. Example AWS-specific Terraform code for provisioning the EC2 instance and allocating an Elastic IP:
+```Security Group:``` Configured to allow traffic on ports 8080 (HTTP) and 4343 (HTTPS), ensuring the web server is accessible securely. Example AWS-specific Terraform code for provisioning the EC2 instance and allocating an Elastic IP:
 ### Configuration Management with Ansible
 #### Step 2: Configuring the Instance with Ansible
 Once the infrastructure is provisioned, Ansible is used to configure the instance. This involves several tasks, including:
