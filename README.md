@@ -60,3 +60,45 @@ Your inventory.ini file should only contain the IPs of the target instance.
 
 🚀 We go to the project folder and run docker compose up -d --build.
 
+![im1](https://github.com/Sonakhach/WM_2/blob/main/Screenshot%20from%202025-06-30%2023-22-45.png)
+
+#### Security and Access
+##### Step 4: Securing the Application
+The security of the deployment is ensured by:
+
+Firewall Rules: Only HTTP and HTTPS traffic (ports 8080 and 4343) are allowed through the firewall, limiting access to the services.
+Restricting Database Access: The MySQL database is not exposed to the internet directly. Instead, it communicates internally with the WordPress container.
+SSL/TLS (Optional): SSL certificates can be configured for HTTPS access, securing the communication between users and the server.
+
+###### Testing and Scaling
+
+##### Step 5: Testing
+Once the application is deployed, it’s important to test:
+
+WordPress Site: Ensure that the WordPress site is accessible via the assigned static IP or Elastic IP.
+PHPMyAdmin: Verify access to PHPMyAdmin for database management.
+Persistence: Confirm that data persists across container restarts by restarting the server and checking that the site and data are still intact.
+##### Step 6: Scaling (Optional)
+The application can be scaled by:
+
+Provisioning Additional Instances: Terraform can be used to create additional cloud instances, either for load balancing or redundancy.
+Configuring Load Balancing: A load balancer can be set up to distribute traffic across multiple instances.
+Database Replication: Ensure the MySQL database is replicated across instances to maintain data consistency.
+##### Conclusion
+The Cloud-1 project provides an automated and scalable solution for deploying a WordPress website using Docker containers on AWS and GCP. By leveraging Terraform and Ansible, the entire deployment process is automated, making it easier to replicate and manage the infrastructure.
+
+This solution ensures security, persistence, and scalability, making it suitable for a production environment.
+
+##### Sources
+Collaborative Forked Repository: Cloud-1
+This project was collaboratively developed by dohanyan and arakhurs. The original project was based on GCP, and we worked together to extend its scope and deploy it on AWS as well. The repository contains the work done by both contributors.
+
+##### Inception Project:
+The "Inception" project served as the main inspiration and base for this deployment automation. The challenge was to replicate and automate the deployment of a WordPress site with containers for each service while ensuring that each process runs in a separate container. You can find more details on the original Inception-42
+
+##### Learning materials
+Terraform
+Ansible
+AWS
+GCP
+Other_YT
