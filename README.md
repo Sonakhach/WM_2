@@ -98,7 +98,11 @@ The "Inception" project served as the main inspiration and base for this deploym
 
 ##### Learning materials
 Terraform
+
 Ansible
+
 AWS
+
 GCP
+
 Other_YT
