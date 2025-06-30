@@ -60,6 +60,12 @@ Your inventory.ini file should only contain the IPs of the target instance.
 
 🚀 We go to the project folder and run docker compose up -d --build.
 
+WordPress: https://<your-target-ip>:4343/
+
+Admin Panel: https://<your-target-ip>:4343 /wp-login.php
+
+Static Site: https://<your-target-ip>:4343/wp-content/static-site/index.html
+
 ![im1](https://github.com/Sonakhach/WM_2/blob/main/Screenshot%20from%202025-06-30%2023-22-45.png)
 
 #### Security and Access
